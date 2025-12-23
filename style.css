@@ -1,0 +1,248 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1e1f29;
+  --muted: #5b6178;
+  --primary: #6b7bff;
+  --primary-strong: #4f5be0;
+  --accent: #ffd166;
+  --border: #e4e8f1;
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  --radius: 16px;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Pretendard", "Inter", "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(107, 123, 255, 0.12), transparent 25%),
+    radial-gradient(circle at 80% 0%, rgba(255, 209, 102, 0.2), transparent 30%),
+    var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 48px 16px 64px;
+}
+
+.page {
+  width: min(960px, 100%);
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  margin: 8px 0;
+  font-size: clamp(28px, 3vw, 36px);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.pill {
+  display: inline-block;
+  padding: 8px 14px;
+  background: rgba(107, 123, 255, 0.1);
+  color: var(--primary-strong);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  border: 1px solid var(--border);
+}
+
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.progress {
+  flex: 1;
+  height: 10px;
+  background: #eef1f8;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #a88bff);
+  width: 0;
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.progress-text {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.question-head {
+  margin-bottom: 16px;
+}
+
+.question-head h2 {
+  margin: 8px 0 0;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  background: var(--border);
+  border-radius: 10px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+
+.option-btn {
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #f9fafc;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.15s ease, border 0.15s ease, background 0.15s ease;
+}
+
+.option-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+  background: #fff;
+}
+
+.option-btn.selected {
+  border: 1px solid var(--primary);
+  background: rgba(107, 123, 255, 0.08);
+  box-shadow: 0 10px 24px rgba(107, 123, 255, 0.2);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+button {
+  font-family: inherit;
+  font-size: 15px;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.primary {
+  background: linear-gradient(120deg, var(--primary), #9a8bff);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(107, 123, 255, 0.25);
+}
+
+.primary.full {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.ghost {
+  background: #eef1f8;
+  color: var(--text);
+}
+
+.hidden {
+  display: none;
+}
+
+.result-description {
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+.score-breakdown {
+  margin: 18px 0 8px;
+  display: grid;
+  gap: 10px;
+}
+
+.score-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 40px;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.score-bar {
+  height: 10px;
+  background: #eef1f8;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.score-bar span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--primary), #8cb4ff);
+  width: 0;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 24px 12px 48px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .question-head h2 {
+    font-size: 20px;
+  }
+}

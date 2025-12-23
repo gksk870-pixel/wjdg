@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>나는 어떤 과목의 교사일까?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <p class="pill">8문항 • 2분 컷</p>
+      <h1>나는 어떤 과목의 교사일까?</h1>
+      <p class="subtitle">고등학생 전용 밈 감성 MBTI(?) 테스트! 가볍게 골라보고 어울리는 교사 타입을 찾아봐.</p>
+    </header>
+
+    <main class="card" id="quiz-card">
+      <div id="quiz-view">
+        <div class="progress-row">
+          <div class="progress">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+          <span class="progress-text" id="progress-text"></span>
+        </div>
+
+        <div class="question-head">
+          <p class="badge" id="question-number"></p>
+          <h2 id="question-text"></h2>
+        </div>
+
+        <div class="options" id="options"></div>
+
+        <div class="controls">
+          <button id="prev-btn" class="ghost">이전</button>
+          <button id="next-btn" class="primary">다음</button>
+        </div>
+      </div>
+
+      <div id="result-view" class="hidden">
+        <p class="pill">결과</p>
+        <h2 id="result-title"></h2>
+        <p id="result-description" class="result-description"></p>
+        <div class="score-breakdown" id="score-breakdown"></div>
+        <button id="restart-btn" class="primary full">다시 해보기</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
